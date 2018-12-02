@@ -5,7 +5,9 @@
                 <a href="" class="brand-logo left">GeoNinjas!</a>
                 <ul class="right">
                     <li>
-                        <a href="">Signup</a>
+                        <a href="#/signup/">Signup</a>
+                    </li>
+                    <li>
                         <a href="">Login</a>
                     </li>
                 </ul>
