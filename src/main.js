@@ -3,14 +3,22 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import firebase from 'firebase'
 import 'materialize-css/dist/js/materialize.min'
 
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+let app = null
+
+firebase.auth().onAuthStateChanged(()=>{
+  if (!app) {
+    app = new Vue({
+      el: '#app',
+      router,
+      components: { App },
+      template: '<App/>'
+    })
+  }
 })
+/* eslint-disable no-new */
+
